@@ -60,7 +60,7 @@ const SITE_CONFIG = {
   },
 
   gallery: [
-    { image: "images/memory-1.svg", caption: "ภาพความทรงจำที่ 1" },
+    { image: "images/memory-1.jpg", caption: "ภาพความทรงจำที่ 1" },
     { image: "images/memory-2.svg", caption: "ภาพความทรงจำที่ 2" },
     { image: "images/memory-3.svg", caption: "ภาพความทรงจำที่ 3" },
     { image: "images/memory-4.svg", caption: "ภาพความทรงจำที่ 4" },
