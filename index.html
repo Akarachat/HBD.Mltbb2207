@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080315" />
+  <title>Our Galaxy Birthday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <section id="cinematicIntro" class="cinematic-intro">
+    <div class="intro-blackout"></div>
+    <div class="intro-nebula"></div>
+
+    <div id="warpTunnel" class="warp-tunnel" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div id="astroCatScene" class="astro-cat-scene">
+      <div class="astro-cat-wrap">
+        <div class="astro-cat-aura"></div>
+        <div class="astro-cat">
+          <div class="helmet">
+            <div class="helmet-glass">
+              <div class="cat-head">
+                <span class="cat-ear left"></span>
+                <span class="cat-ear right"></span>
+                <span class="cat-face">
+                  <i class="cat-eye left"></i>
+                  <i class="cat-eye right"></i>
+                  <i class="cat-nose"></i>
+                  <i class="cat-mouth"></i>
+                  <i class="cat-whisker w1"></i>
+                  <i class="cat-whisker w2"></i>
+                  <i class="cat-whisker w3"></i>
+                  <i class="cat-whisker w4"></i>
+                </span>
+              </div>
+              <span class="helmet-shine"></span>
+            </div>
+            <div class="helmet-rim"></div>
+          </div>
+
+          <div class="space-suit">
+            <div class="suit-chest">
+              <span class="suit-light red"></span>
+              <span class="suit-light blue"></span>
+              <span class="suit-panel"></span>
+            </div>
+            <div class="suit-arm left"></div>
+            <div class="suit-arm right"></div>
+            <div class="suit-leg left"></div>
+            <div class="suit-leg right"></div>
+            <div class="jetpack">
+              <span class="jet jet-left"></span>
+              <span class="jet jet-right"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="introDialogue" class="intro-dialogue glass">
+        <p class="dialogue-name">CAPTAIN MEOW ✦</p>
+        <h1>พร้อมจะเดินทางไปด้วยกันไหม?</h1>
+        <p>มีจักรวาลหนึ่งกำลังรอให้เราออกไปสำรวจ และมันถูกสร้างขึ้นเพื่อเธอโดยเฉพาะ</p>
+
+        <div class="intro-choices">
+          <button id="acceptJourney" class="accept-journey">ตกลง ไปกันเลย 🚀</button>
+          <button id="declineJourney" class="decline-journey">ไม่ไป</button>
+        </div>
+        <small id="declineHint" class="decline-hint"></small>
+      </div>
+    </div>
+
+    <div id="warpMessage" class="warp-message">
+      <p>กำลังเปิดประตูสู่กาแล็กซี...</p>
+    </div>
+  </section>
+
+
+  <main id="galaxyApp" class="galaxy-app cinematic-locked">
+    <section id="galaxyScene" class="galaxy-scene">
+      <div class="nebula nebula-one"></div>
+      <div class="nebula nebula-two"></div>
+      <div class="nebula nebula-three"></div>
+      <div class="magic-runes rune-one"></div>
+      <div class="magic-runes rune-two"></div>
+      <div class="shooting-stars" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="galaxy-hud glass">
+        <div>
+          <p class="eyebrow">BIRTHDAY GALAXY</p>
+          <h1 id="heroTitle">จักรวาลวันเกิดของเธอ</h1>
+          <p id="heroSubtitle">ออกสำรวจดวงดาวแต่ละดวง และทำภารกิจให้ครบ</p>
+        </div>
+
+        <div class="mission-progress">
+          <div class="progress-label">
+            <span>ภารกิจสำเร็จ</span>
+            <strong id="progressText">0 / 3</strong>
+          </div>
+          <div class="progress-bar"><span id="progressBar"></span></div>
+        </div>
+      </div>
+
+      <div id="spaceMap" class="space-map">
+        <div class="galaxy-core" aria-hidden="true"></div>
+
+        <button class="mission-planet planet-quiz" data-mission="quiz" aria-label="เข้าสู่ดาวตอบคำถาม">
+          <span class="arcane-system">
+            <span class="arcane-ring arcane-ring-outer"><i>✦</i><i>✧</i><i>✦</i><i>✧</i><i>✦</i><i>✧</i></span>
+            <span class="arcane-ring arcane-ring-mid"></span>
+            <span class="arcane-glyphs">ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ</span>
+          </span>
+          <span class="planet-glow"></span>
+          <span class="planet-atmosphere"></span>
+          <span class="planet-sphere">
+            <span class="planet-clouds"></span>
+            <span class="planet-texture"></span>
+            <span class="planet-shine"></span>
+          </span>
+          <span class="planet-orbit"></span>
+          <span class="planet-label glass">
+            <small>MISSION 01</small>
+            <strong>ดาวแห่งคำถาม</strong>
+            <em id="quizStatus">ยังไม่สำเร็จ</em>
+          </span>
+        </button>
+
+        <button class="mission-planet planet-memory" data-mission="memory" aria-label="เข้าสู่ดาวจับคู่">
+          <span class="arcane-system">
+            <span class="arcane-ring arcane-ring-outer"><i>✦</i><i>✧</i><i>✦</i><i>✧</i><i>✦</i><i>✧</i></span>
+            <span class="arcane-ring arcane-ring-mid"></span>
+            <span class="arcane-glyphs">ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ</span>
+          </span>
+          <span class="planet-glow"></span>
+          <span class="planet-atmosphere"></span>
+          <span class="planet-sphere">
+            <span class="planet-clouds"></span>
+            <span class="planet-texture"></span>
+            <span class="planet-shine"></span>
+          </span>
+          <span class="planet-ring"></span>
+          <span class="planet-label glass">
+            <small>MISSION 02</small>
+            <strong>ดาวแห่งความทรงจำ</strong>
+            <em id="memoryStatus">ยังไม่สำเร็จ</em>
+          </span>
+        </button>
+
+        <button class="mission-planet planet-photo" data-mission="photo" aria-label="เข้าสู่ดาวทายภาพ">
+          <span class="arcane-system">
+            <span class="arcane-ring arcane-ring-outer"><i>✦</i><i>✧</i><i>✦</i><i>✧</i><i>✦</i><i>✧</i></span>
+            <span class="arcane-ring arcane-ring-mid"></span>
+            <span class="arcane-glyphs">ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ</span>
+          </span>
+          <span class="planet-glow"></span>
+          <span class="planet-atmosphere"></span>
+          <span class="planet-sphere">
+            <span class="planet-clouds"></span>
+            <span class="planet-texture"></span>
+            <span class="planet-shine"></span>
+          </span>
+          <span class="planet-moon"></span>
+          <span class="planet-label glass">
+            <small>MISSION 03</small>
+            <strong>ดาวแห่งภาพปริศนา</strong>
+            <em id="photoStatus">ยังไม่สำเร็จ</em>
+          </span>
+        </button>
+
+
+        <button id="bossPlanet" class="boss-planet locked" aria-label="ดาวสุดท้ายที่ยังถูกล็อก">
+          <span class="boss-runes"></span><span class="boss-core"></span><span class="boss-lock">🔒</span>
+          <span class="boss-label glass"><strong>FINAL PLANET</strong><em id="bossStatus">LOCKED</em></span>
+        </button>
+
+        <div id="galaxyParticles" class="galaxy-particles"></div>
+        <div class="decor-planet decor-a"></div>
+        <div class="decor-planet decor-b"></div>
+        <div class="comet comet-a"></div>
+        <div class="comet comet-b"></div>
+      </div>
+
+      <div class="map-hint glass">
+        <span class="mouse-icon">✦</span>
+        คลิกดาวเพื่อซูมเข้าและเริ่มภารกิจ
+      </div>
+    </section>
+
+
+    <section id="missionBriefing" class="section briefing-section">
+      <div class="briefing-card glass">
+        <div class="npc-lineup">
+          <button class="npc active" data-npc="cat"><span>🐱‍🚀</span><small>กัปตันเหมียว</small></button>
+          <button class="npc" data-npc="penguin"><span>🐧</span><small>นักวิทยาศาสตร์</small></button>
+          <button class="npc" data-npc="fox"><span>🦊</span><small>นักสำรวจ</small></button>
+          <button class="npc" data-npc="rabbit"><span>🐰</span><small>ช่างยาน</small></button>
+        </div>
+        <div class="npc-dialogue">
+          <p class="eyebrow">MISSION BRIEFING</p>
+          <h2 id="npcName">กัปตันเหมียว</h2>
+          <p id="npcText">ในกาแล็กซีนี้มีเศษเสี้ยวความทรงจำซ่อนอยู่ ทำภารกิจทั้งสามให้ครบ แล้วดาวสุดท้ายจะเปิดทางไปสู่ Our Universe</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="section story-section">
+      <div class="section-heading">
+        <p class="eyebrow">OUR CONSTELLATION</p>
+        <h2>เรื่องราวของเรา</h2>
+        <p>ทุกช่วงเวลาคือดาวดวงหนึ่งที่รวมกันเป็นกลุ่มดาวของเรา</p>
+      </div>
+      <div id="timeline" class="timeline"></div>
+    </section>
+
+    <section id="gallery" class="section gallery-section">
+      <div class="section-heading">
+        <p class="eyebrow">MEMORY NEBULA</p>
+        <h2>กาแล็กซีแห่งความทรงจำ</h2>
+        <p>เปลี่ยนรูปในโฟลเดอร์ images แล้วความทรงจำของคุณจะมาอยู่ตรงนี้</p>
+      </div>
+      <div id="galleryGrid" class="gallery-grid"></div>
+    </section>
+
+
+    <section id="music" class="section music-section">
+      <div class="section-heading">
+        <p class="eyebrow">MUSIC GALAXY</p>
+        <h2>จักรวาลแห่งบทเพลง</h2>
+        <p>แตะแผ่นเสียงแต่ละแผ่น เพื่อฟังเพลงแห่งความทรงจำประมาณ 30 วินาที</p>
+      </div>
+
+      <div class="music-stage glass">
+        <div class="music-nebula music-nebula-a"></div>
+        <div class="music-nebula music-nebula-b"></div>
+
+        <div id="musicOrbit" class="music-orbit"></div>
+
+        <div class="now-playing-panel">
+          <p class="eyebrow">NOW PLAYING</p>
+          <h3 id="nowPlayingTitle">เลือกแผ่นเสียงเพื่อเริ่มเล่น</h3>
+          <p id="nowPlayingArtist">Music Galaxy</p>
+
+          <div class="equalizer" id="equalizer">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+          </div>
+
+          <div class="music-time-row">
+            <span id="musicCurrentTime">00:00</span>
+            <span id="musicDuration">00:30</span>
+          </div>
+
+          <div id="musicProgress" class="music-progress">
+            <span id="musicProgressBar"></span>
+          </div>
+
+          <div class="music-controls">
+            <button id="musicPrev" class="music-control glass" aria-label="เพลงก่อนหน้า">⏮</button>
+            <button id="musicToggle" class="music-toggle" aria-label="เล่นหรือหยุดเพลง">▶</button>
+            <button id="musicNext" class="music-control glass" aria-label="เพลงถัดไป">⏭</button>
+          </div>
+        </div>
+      </div>
+
+      <audio id="musicPlayer" preload="metadata"></audio>
+    </section>
+
+    <section id="finale" class="section finale-section">
+      <div class="finale-card glass">
+        <p class="eyebrow">THE FINAL STAR</p>
+        <h2 id="finalTitle">ดาวดวงสุดท้ายยังถูกล็อกอยู่</h2>
+        <p id="finalText">ทำภารกิจให้ครบทั้ง 3 ดวง แล้วข้อความพิเศษจะปรากฏ</p>
+        <button id="finalBtn" class="primary-btn" disabled>🔒 ยังปลดล็อกไม่ได้</button>
+
+        <div id="secretMessage" class="secret-message hidden">
+          <div class="secret-star">✦</div>
+          <h3 id="secretHeading"></h3>
+          <p id="secretBody"></p>
+          <div id="signature" class="signature"></div>
+          <button id="celebrateBtn" class="primary-btn">กดเพื่อฉลอง 🎉</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>Made with love, stardust, and a little bit of JavaScript ✨</footer>
+  </main>
+
+  <div id="planetOverlay" class="planet-overlay hidden">
+    <button id="exitPlanet" class="exit-planet glass" aria-label="ออกจากดาว">
+      <span>←</span> กลับสู่กาแล็กซี
+    </button>
+
+    <div class="planet-landing">
+      <div id="landingPlanet" class="landing-planet">
+        <span class="landing-glow"></span>
+        <span class="landing-sphere"></span>
+        <span class="landing-ring"></span>
+      </div>
+    </div>
+
+    <div id="missionPanel" class="mission-panel glass">
+      <div id="missionContent"></div>
+    </div>
+  </div>
+
+
+  <div id="secretRecordModal" class="secret-record-modal hidden">
+    <div class="secret-record-card glass">
+      <div class="unlock-burst">✦</div>
+      <p class="eyebrow">SECRET FREQUENCY FOUND</p>
+      <h2>ปลดล็อกแผ่นเสียงพิเศษแล้ว!</h2>
+      <p>กัปตันเหมียวตรวจพบคลื่นเพลงลับ แผ่นเสียงดวงที่ 8 ปรากฏใน Music Galaxy แล้ว</p>
+      <button id="closeSecretRecord" class="primary-btn">ไปดูแผ่นเสียงพิเศษ</button>
+    </div>
+  </div>
+
+  <div id="finalPlanetOverlay" class="final-planet-overlay hidden">
+    <button id="closeFinalPlanet" class="exit-planet glass">← กลับสู่กาแล็กซี</button>
+    <div class="final-world">
+      <div class="final-sky"><span></span><span></span><span></span></div>
+      <div class="final-moon"></div>
+      <div class="final-ground">
+        <div class="final-tree">🌳</div><div class="final-house">🏡</div>
+      </div>
+      <div class="final-message glass">
+        <p class="eyebrow">OUR UNIVERSE</p>
+        <h2>ปลายทางของการเดินทาง คือบ้านที่มีเรา</h2>
+        <p>ดาวทุกดวง ภาพทุกภาพ และบทเพลงทุกเพลง คือเศษเสี้ยวของจักรวาลที่ฉันอยากสร้างไปพร้อมกับเธอ</p>
+        <button id="startEnding" class="primary-btn">เริ่มฉากสุดท้าย ✨</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="endingCinema" class="ending-cinema hidden">
+    <div id="endingMemories" class="ending-memories"></div>
+    <div class="ending-copy">
+      <p>การเดินทางของเรา...</p>
+      <h2>ในจักรวาลอันกว้างใหญ่<br>การได้พบเธอ คือความบังเอิญที่สวยงามที่สุดของฉัน</h2>
+      <div class="ending-heart">❤</div>
+      <h1>Happy Birthday</h1>
+      <button id="closeEnding" class="secondary-btn">กลับสู่จักรวาล</button>
+    </div>
+  </div>
+
+  <div id="galleryLightbox" class="gallery-lightbox hidden">
+    <button id="closeLightbox" class="lightbox-close glass" aria-label="ปิดรูป">×</button>
+    <button id="prevImage" class="lightbox-nav lightbox-prev glass" aria-label="รูปก่อนหน้า">‹</button>
+    <figure class="lightbox-figure">
+      <img id="lightboxImage" src="" alt="">
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+    <button id="nextImage" class="lightbox-nav lightbox-next glass" aria-label="รูปถัดไป">›</button>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <div id="confettiLayer" class="confetti-layer"></div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
