@@ -5,12 +5,12 @@
 
 const SITE_CONFIG = {
   intro: {
-    title: "สุขสันต์วันเกิดนะ คนเก่งของฉัน 💜",
-    text: "ฉันสร้างจักรวาลเล็ก ๆ นี้ไว้ให้เธอโดยเฉพาะ ลองเข้ามาเล่นกันนะ"
+    title: "สุขสันต์วันเกิดนะ บีบี๋ 💜",
+    text: "นี่คือจักรวาลเล็ก ๆ นี้ไว้ให้นักสำรวจนินา "
   },
 
   hero: {
-    title: "สุขสันต์วันเกิด คนพิเศษของฉัน",
+    title: "สุขสันต์วันเกิดคับ",
     subtitle: "ขอบคุณที่เข้ามาเป็นดาวดวงโปรดในจักรวาลของฉัน ขอให้ปีนี้เต็มไปด้วยความสุข รอยยิ้ม และเรื่องดี ๆ"
   },
 
@@ -60,7 +60,7 @@ const SITE_CONFIG = {
   },
 
   gallery: [
-    { image: "images/memory-1.jpg", caption: "ภาพความทรงจำที่ 1" },
+    { image: "memory-1.jpg", caption: "ภาพความทรงจำที่ 1" },
     { image: "images/memory-2.svg", caption: "ภาพความทรงจำที่ 2" },
     { image: "images/memory-3.svg", caption: "ภาพความทรงจำที่ 3" },
     { image: "images/memory-4.svg", caption: "ภาพความทรงจำที่ 4" },
@@ -70,7 +70,7 @@ const SITE_CONFIG = {
 
 
   music: [
-    { title: "เพลงของเรา 1", artist: "Our Memory", cover: "images/memory-1.svg", file: "music/song1.wav", preview: 30 },
+    { title: "เพลงของเรา 1", artist: "Our Memory", cover: "memory-1.jpg", file: "music/song1.wav", preview: 30 },
     { title: "เพลงของเรา 2", artist: "Moonlight Date", cover: "images/memory-2.svg", file: "music/song2.wav", preview: 30 },
     { title: "เพลงของเรา 3", artist: "First Journey", cover: "images/memory-3.svg", file: "music/song3.wav", preview: 30 },
     { title: "เพลงของเรา 4", artist: "Starlight Drive", cover: "images/memory-4.svg", file: "music/song4.wav", preview: 30 },
