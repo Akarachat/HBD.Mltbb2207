@@ -11,40 +11,40 @@ const SITE_CONFIG = {
 
   hero: {
     title: "สุขสันต์วันเกิดคับ",
-    subtitle: "ขอบคุณที่เข้ามาเป็นดาวดวงโปรดในจักรวาลของฉัน ขอให้ปีนี้เต็มไปด้วยความสุข รอยยิ้ม และเรื่องดี ๆ"
+    subtitle: "ขอบคุณที่เข้ามาเป็นดาวดวงโปรดในจักรวาล ขอให้ปีนี้เต็มไปด้วยความสุข รอยยิ้ม และเรื่องดี ๆ"
   },
 
   timeline: [
     {
       date: "วันแรกที่เราได้รู้จักกัน",
       title: "ดาวดวงแรกของเรา",
-      text: "แก้ข้อความนี้เป็นเรื่องราววันแรกที่คุณกับแฟนได้รู้จักกัน"
+      text: "บี๋เอาตุ๊กตาแกะมาให้ ตกใจ และเซอร์ไพรส์มาก โดนตกเลย"
     },
     {
       date: "ช่วงเวลาที่ประทับใจ",
       title: "การเดินทางที่อยากจำ",
-      text: "ใส่เหตุการณ์สำคัญ เช่น เดตแรก ทริปแรก หรือวันที่หัวเราะด้วยกันมากที่สุด"
+      text: "ไปเดทด้วยกันเป็นที่แรก เขินมาก ตอนนั้นเกร็ง แต่ว่าเนียนทำทรง 555"
     },
     {
       date: "วันนี้",
-      title: "อีกหนึ่งปีที่มีเธอ",
-      text: "และฉันหวังว่าจะได้สร้างความทรงจำใหม่ ๆ ไปด้วยกันอีกเยอะเลย"
+      title: "อีกหนึ่งปีที่บี๋โตขึ้น",
+      text: "หวังว่าจะได้สร้างความทรงจำใหม่ ๆ ไปด้วยกันอีกเยอะๆเลย"
     }
   ],
 
   quiz: [
     {
       question: "เราเจอกันครั้งแรกที่ไหน?",
-      options: ["ร้านกาแฟ", "ที่ทำงาน", "มหาวิทยาลัย", "ในเกม"],
+      options: ["เกาะล้าน", "เซเว่น", "บีเอ็นที", "ในฝัน"],
       answer: 1
     },
     {
-      question: "อาหารที่เราชอบกินด้วยกันมากที่สุดคืออะไร?",
-      options: ["ชาบู", "พิซซ่า", "ส้มตำ", "ซูชิ"],
+      question: "ศิลปินคนโปรดของบีบี๋ ในช่วงแรก?",
+      options: ["Taylor Swift", "พี่ฟลุ๊ค", "Sabrina", "ไหมไทย"],
       answer: 0
     },
     {
-      question: "สิ่งที่ฉันชอบที่สุดเกี่ยวกับเธอคืออะไร?",
+      question: "สิ่งที่พี่ฟลุ๊คชอบที่สุดเกี่ยวกับนินาคืออะไร?",
       options: ["รอยยิ้ม", "ความใจดี", "ความตลก", "ทุกข้อ"],
       answer: 3
     }
@@ -55,7 +55,7 @@ const SITE_CONFIG = {
   photoQuiz: {
     image: "images/photo-quiz.svg",
     question: "ภาพนี้คือความทรงจำจากเหตุการณ์ไหน?",
-    options: ["เดตแรกของเรา", "ทริปแรก", "วันเกิดปีที่แล้ว", "วันที่ฝนตกด้วยกัน"],
+    options: ["ด๊อบบี้แมวปีศาจ", "อ่างแก้ว", "วันเกิดปีที่แล้ว", "วันที่ตากฝนด้วยกัน"],
     answer: 1
   },
 
@@ -70,30 +70,30 @@ const SITE_CONFIG = {
 
 
   music: [
-    { title: "เพลงของเรา 1", artist: "Our Memory", cover: "memory-1.jpg", file: "music/song1.wav", preview: 30 },
-    { title: "เพลงของเรา 2", artist: "Moonlight Date", cover: "images/memory-2.svg", file: "music/song2.wav", preview: 30 },
-    { title: "เพลงของเรา 3", artist: "First Journey", cover: "images/memory-3.svg", file: "music/song3.wav", preview: 30 },
-    { title: "เพลงของเรา 4", artist: "Starlight Drive", cover: "images/memory-4.svg", file: "music/song4.wav", preview: 30 },
-    { title: "เพลงของเรา 5", artist: "Dancing Galaxy", cover: "images/memory-5.svg", file: "music/song5.wav", preview: 30 },
-    { title: "เพลงของเรา 6", artist: "Wish Upon a Star", cover: "images/memory-6.svg", file: "music/song6.wav", preview: 30 },
-    { title: "เพลงสุดท้ายของเรา", artist: "Forever With You", cover: "images/photo-quiz.svg", file: "music/song7.wav", preview: 30 }
+    { title: "เพลงที่ 1", artist: "Movie", cover: "mvcv.jpg", file: "music/song1.wav", preview: 30 },
+    { title: "เพลงที่ 2", artist: "Dance With Me", cover: "bbcv.jpg", file: "music/song2.wav", preview: 30 },
+    { title: "เพลงที่ 3", artist: "ชายหน้ามึน", cover: "atcv.jpg", file: "music/song3.wav", preview: 30 },
+    { title: "เพลงที่ 4", artist: "Don't Smile", cover: "sbcv.jpg", file: "music/song4.wav", preview: 30 },
+    { title: "เพลงที่ 5", artist: "u + me = <3", cover: "olcv.jpg", file: "music/song5.wav", preview: 30 },
+    { title: "เพลงที่ 6", artist: "Style", cover: "tscv.jpg", file: "music/song6.wav", preview: 30 },
+    { title: "เพลงสุดท้าย", artist: "Sunset With you", cover: "swcv.jpg, file: "music/song7.wav", preview: 30 }
   ],
 
   specialRecord: {
-    title: "เพลงลับของเรา",
-    artist: "Secret Star",
-    cover: "images/photo-quiz.svg",
+    title: "อีกแล้ว",
+    artist: "Secret Song",
+    cover: "againcv.jpg",
     file: "music/secret-song.wav",
     preview: 30
   },
 
   secret: {
-    heading: "Happy Birthday, My Favorite Person ✨",
+    heading: "Happy Birthday คับเบบี๋, My Favorite Person ✨",
     body: `ขอให้วันเกิดปีนี้เป็นจุดเริ่มต้นของปีที่ดีที่สุด
-ขอให้เธอมีความสุขในทุกวัน ได้ทำในสิ่งที่รัก
-และไม่ว่าจะเดินทางไปไกลแค่ไหน ขอให้รู้ไว้ว่ายังมีฉันอยู่ข้าง ๆ เสมอ
+ขอให้บี๋มีความสุขในทุกวัน ได้ทำในสิ่งที่รัก
+และไม่ว่าจะเดินทางไปไกลแค่ไหน พี่ฟลุ๊คจะอยู่ข้าง ๆ เสมอ
 
-รักเธอมากกว่าดวงดาวทั้งหมดในจักรวาล`,
-    signature: "จากคนที่รักเธอที่สุด 💜"
+รักบี๋มากกว่าดวงดาวทั้งหมดในจักรวาลลล`,
+    signature: "- P'Fluke 💜"
   }
 };
